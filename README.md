@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Serviço de Pagamento
 
 Uma classe JavaScript para gerenciar pagamentos com categorização automática e consulta do último pagamento realizado.
@@ -90,3 +91,7 @@ Projeto desenvolvido para prática de testes automatizados e lógica de programa
 ## 📄 Licença
 
 ISC
+=======
+# Projeto-Realizar-Pagamento
+Projeto de Realizar e Consultar Pagamento com Testes Automatizados
+>>>>>>> 8c433890c04355e436de2672c9cb414c6de618d8
