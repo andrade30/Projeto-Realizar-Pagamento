@@ -1,3 +1,6 @@
+# Projeto-Realizar-Pagamento
+Projeto de Realizar e Consultar Pagamento com Testes Automatizados
+
 # Serviço de Pagamento
 
 Uma classe JavaScript para gerenciar pagamentos com categorização automática e consulta do último pagamento realizado.
@@ -86,10 +89,3 @@ Os relatórios de teste são gerados em `mochawesome-report/`
 **Alessandro Andrade**
 
 Projeto desenvolvido para prática de testes automatizados e lógica de programação em JavaScript.
-
-## 📄 Licença
-
-ISC
-=======
-# Projeto-Realizar-Pagamento
-Projeto de Realizar e Consultar Pagamento com Testes Automatizados
