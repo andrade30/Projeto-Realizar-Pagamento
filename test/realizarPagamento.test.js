@@ -16,7 +16,7 @@ describe('Classe de Serviço de Pagamento', () => {
         assert.equal(ultimoPagamento.categoria, 'cara');
     });
 
-    it('Validar que o pagamento com valor menor que 100 reais é categorizado como "padrão"', () => {
+    it('Validar que o pagamento com valor até 100 reais é categorizado como "padrão"', () => {
         // Arrange
         const servicoDePagamento = new ServicoDePagamento();
 
