@@ -17,7 +17,7 @@ on:
     # 1 - minuto, 2 - hora, 3 dia do mês, 4 - mês, 5 - dia da semana
 
     # Roda às 17:00 hrs de Segunda a Sexta
-    - cron: '0/5 * * * 5'
+    - cron: '0/5 * * * *'
 
 #tarefas dentro da pipeline = jobs
 jobs:
