@@ -281,5 +281,5 @@ Ao final da execução:
 
 # Autor
 
-Alessandro Andrade
+Alessandro Andrade |
 QA Engineer
