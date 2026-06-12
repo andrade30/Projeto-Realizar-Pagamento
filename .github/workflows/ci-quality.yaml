@@ -1,0 +1,55 @@
+# Nome da pipeline
+name: 'CI Quality Pipeline'
+
+# gatilhos / triggers - regras de disparo
+# gatilho manual = workflow_dispatch
+# gatilho agendado = schedule
+# gatilho por execução do push
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+        - main
+
+  schedule:
+    # cronograma de execução
+    # 1 - minuto, 2 - hora, 3 dia do mês, 4 - mês, 5 - dia da semana
+
+    # Roda às 11:00 hrs de Segunda a Sexta
+    - cron: '0 11 * * 1-5'
+
+#tarefas dentro da pipeline = jobs
+jobs:
+    # nome do job
+    unit-tests:
+        # maquina onde o job vai rodar
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout do código
+            uses: actions/checkout@v4
+
+          - name: Configurando Node.js
+            uses: actions/setup-node@v4
+            with:
+               node-version: '22.x'
+               cache: 'npm'
+               
+          # instalação das dependências
+          - name: Instalando dependências
+            run: npm ci
+
+          - name: Executando ESLint
+            run: npm run lint
+
+          - name: Rodando Testes Unitários
+            run: npm test
+
+          - name: Publicando relatório Mochawesome
+            if: always()
+            uses: actions/upload-artifact@v4
+            with:
+              name: mochawesome-report
+              path: mochawesome-report/
+              retention-days: 30

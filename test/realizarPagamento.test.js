@@ -1,5 +1,5 @@
-import ServicoDePagamento from '../src/realizarPagamento.js'
-import assert from 'node:assert'
+import ServicoDePagamento from '../src/realizarPagamento.js';
+import assert from 'node:assert';
 
 describe('Classe de Serviço de Pagamento', () => {
     it('Validar que o pagamento com valor acima de 100 reais é categorizado como "cara"', function () {
@@ -36,7 +36,7 @@ describe('Classe de Serviço de Pagamento', () => {
 
         // Act
         servicoDePagamento.pagar('1111-2222-3333', 'Spotify', 45.00);
-        servicoDePagamento.pagar('5555-6666-7777', 'Netflix', 250.00)
+        servicoDePagamento.pagar('5555-6666-7777', 'Netflix', 250.00);
 
         const ultimoPagamento = servicoDePagamento.consultarUltimoPagamento();
         console.log(ultimoPagamento);

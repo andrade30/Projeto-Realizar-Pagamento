@@ -18,10 +18,10 @@ a propriedade categoria ficará como 'padrão'. O método de consultar trará ap
 */
 
 export default class ServicoDePagamento {
-    #pagamentos
+    #pagamentos;
 
     constructor() {
-        this.#pagamentos = []
+        this.#pagamentos = [];
     }
 
     pagar(codigoDeBarras, empresa, valor) {
@@ -30,7 +30,7 @@ export default class ServicoDePagamento {
         if (valor > 100) {
             categoria = 'cara';
         } else {
-            categoria = 'padrão'
+            categoria = 'padrão';
         }
 
         const pagamento = {
@@ -38,7 +38,7 @@ export default class ServicoDePagamento {
             empresa: empresa,
             valor: valor,
             categoria: categoria
-        }
+        };
 
         this.#pagamentos.push(pagamento);
     }
