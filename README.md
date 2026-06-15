@@ -161,24 +161,27 @@ workflow_dispatch:
 A pipeline também pode ser executada automaticamente em horários pré-definidos através do recurso de agendamento do GitHub Actions.
 
 schedule:
-  # Executa de Segunda a Sexta às 17:00 (horário de Brasília)
-  # GitHub Actions utiliza UTC (20:00 UTC = 17:00 BRT)
-  - cron: '0 20 * * 1-5'
+  # Executa a cada 5 minutos
+  - cron: '*/5 * * * *'
 
-A expressão acima executa a pipeline de segunda a sexta-feira às 17:00 horas (horário de Brasília).
+A expressão acima executa a pipeline a cada 5 minutos, todos os dias da semana.
 
 Observação
 
-O GitHub Actions utiliza o fuso horário UTC para agendamentos. Por esse motivo, o horário configurado no cron foi convertido de 17:00 BRT para 20:00 UTC.
+O GitHub Actions utiliza o fuso horário UTC para agendamentos. Como a execução está configurada em intervalos de 5 minutos, o fuso horário não impacta a frequência das execuções, apenas o horário exibido nos logs e no histórico das execuções.
 
 Estrutura da expressão cron
-0 20 * * 1-5
-│ │  │ │ │
-│ │  │ │ └── Segunda a Sexta
-│ │  │ └──── Todos os meses
-│ │  └────── Todos os dias do mês
-│ └──────── Hora 20 (UTC)
-└────────── Minuto 0
+*/5 * * * *
+ │  │ │ │ │
+ │  │ │ │ └── Segunda a Sexta
+ │  │ │ └──── Todos os meses
+ │  │ └────── Todos os dias do mês
+ │  └──────── Todas as horas
+ └────────── A cada 5 minutos
+
+Importante
+
+O GitHub Actions não garante que a execução ocorrerá exatamente no minuto programado. Em horários de maior utilização da plataforma, podem ocorrer pequenos atrasos na inicialização do workflow.
 
 ---
 
