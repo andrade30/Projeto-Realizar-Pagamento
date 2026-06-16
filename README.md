@@ -26,7 +26,7 @@ Além da execução automatizada dos testes, o projeto também gera relatórios 
 .
 ├── .github
 │   └── workflows
-│       └── ci-quality.yml
+│       └── ci-quality.yaml
 ├── src
 │   └── realizarPagamento.js
 ├── test
@@ -120,7 +120,7 @@ A pipeline foi implementada utilizando GitHub Actions.
 Arquivo:
 
 ```text
-.github/workflows/ci-quality.yml
+.github/workflows/ci-quality.yaml
 ```
 
 Objetivos da pipeline:
